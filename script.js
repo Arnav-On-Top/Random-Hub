@@ -121,6 +121,9 @@ function resetLottery() {
     document.getElementById("num3").value="";
     document.getElementById("lotteryResult").innerHTML="";
 }
+function resetPassword() {
+    document.getElementById("passwordResult").innerHTML="";
+}
 function changeTheme() {
     document.body.classList.toggle("dark");
     if (document.body.classList.contains("dark")) {
@@ -134,3 +137,24 @@ window.onload = function () {
         document.body.classList.add("dark");
     }
 };
+function makePassword() {
+    let length=document.getElementById("passwordLength").value;
+    if (length=="") {
+        document.getElementById("passwordResult").innerHTML="Please enter a number.";
+        return;
+    }
+    if (length<=0) {
+        document.getElementById("passwordResult").innerHTML="Number must be more than 0";
+        return;
+    }
+    let letters="abcdefghijklmnopqrstuvwxyz";
+    let numbers="1234567890";
+    let symbols="!@#$%";
+    let all=letters+numbers+symbols;
+    let password="";
+    for (let i=0; i<length; i++) {
+        let random=Math.floor(Math.random()*all.length);
+        password=password+all[random];
+    }
+    document.getElementById("passwordResult").innerHTML="Password: "+password;
+}
