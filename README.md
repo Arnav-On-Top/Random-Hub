@@ -1,6 +1,7 @@
 A website based on randomness
 
-Contains: 
+Contains:
+
 -Dice Roll
 
 -Coin Flip
