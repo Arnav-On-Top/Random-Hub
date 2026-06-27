@@ -11,6 +11,8 @@ Contains:
 
 -Pick a Color Ball
 
+-Password Generator
+
 -Light/Dark Theme Button
 
 -Reset Button
