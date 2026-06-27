@@ -94,6 +94,11 @@ function lotteryGame() {
     if(user3==lucky3) {
         match++;
     }
+    if (user1 > 10 || user2 > 10 || user3 > 10) {
+    document.getElementById("lotteryResult").innerHTML =
+        "Numbers must be between 1 and 10.";
+    return;
+    }
     document.getElementById("lotteryResult").innerHTML="Lottery numbers: "+lucky1+ ", "+lucky2+", "+lucky3+"<br>You matched "+match+" numbers.";
 }
 function resetCoin() {
@@ -124,3 +129,8 @@ function changeTheme() {
         localStorage.setItem("theme", "light");
     }
 }
+window.onload = function () {
+    if (localStorage.getItem("theme") === "dark") {
+        document.body.classList.add("dark");
+    }
+};
